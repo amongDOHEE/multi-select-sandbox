@@ -23,12 +23,14 @@
   position: absolute;
   z-index: 1;
   top: 100%;
-  width: 100%;
-  padding-top: 8px;
+  width: 950px;
+  padding: 5px;
 }
 
 .rmsc .dropdown-content .panel-content {
   overflow: hidden;
+  font-size: 14px;
+  height: 500px;
   border-radius: var(--rmsc-radius);
   background: var(--rmsc-bg);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 11px rgba(0, 0, 0, 0.1);
@@ -79,7 +81,6 @@
 }
 
 .rmsc .options {
-  max-height: 260px;
   overflow-y: auto;
   margin: 0;
   padding-left: 0;
@@ -187,4 +188,19 @@
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -124;
   }
+}
+
+.item-styles {
+  width: 180px;
+  text-align: left;
+  display: inline-block;
+}
+
+.dott-line {
+  border: dashed 1px rgb(187, 187, 187);
+  margin: 10px
+}
+
+.all-select-style {
+  margin: 10px 20px 0px 20px;
 }

@@ -31,7 +31,7 @@ const SelectList = ({ options, onClick, skipIndex }: ISelectListProps) => {
         const tabIndex = i + skipIndex;
 
         return (
-          <li key={o?.key || i}>
+          <li key={o?.key || i} className="item-styles">
             <SelectItem
               tabIndex={tabIndex}
               option={o}

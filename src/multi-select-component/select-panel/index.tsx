@@ -219,15 +219,18 @@ const SelectPanel = () => {
 
       <ul className="options">
         {hasSelectAll && hasSelectableOptions && (
-          <SelectItem
-            tabIndex={skipIndex === 1 ? 0 : 1}
-            checked={isAllOptionSelected}
-            option={selectAllOption}
-            onSelectionChanged={selectAllChanged}
-            onClick={() => handleItemClicked(1)}
-            itemRenderer={ItemRenderer}
-            disabled={disabled}
-          />
+          <div className="all-select-style">
+            <SelectItem
+              tabIndex={skipIndex === 1 ? 0 : 1}
+              checked={isAllOptionSelected}
+              option={selectAllOption}
+              onSelectionChanged={selectAllChanged}
+              onClick={() => handleItemClicked(1)}
+              itemRenderer={ItemRenderer}
+              disabled={disabled}
+            />
+            <div className="dott-line"></div>
+          </div>
         )}
 
         {filteredOptions.length ? (

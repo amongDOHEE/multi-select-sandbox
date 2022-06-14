@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  align-items: center;
 }
 
 .App-logo {
@@ -40,4 +39,12 @@
 
 .fillter-width {
   width: 200px;
+  margin-left: 100px;
+  margin-top: 10vh;
+}
+
+.content-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
