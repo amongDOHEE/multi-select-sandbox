@@ -137,6 +137,20 @@ const SelectPanel = () => {
     setFocusIndex(FocusType.SEARCH);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  /*
+  const sortLines = (newOption) => {
+    setOptions([newOption, ...options]);
+    if (options.length % 5 !== 0) {
+      //sort 1 line -> 5 select data
+      for (let i = 0; i < 5 - (options.length % 5); i++) {
+        setOptions([...options, { label: "hello", value: "hello" }]);
+      }
+    }
+  };
+  줄 개수 1줄, 5개씩 맞추기
+  */
+
   const handleOnCreateOption = async () => {
     let newOption = { label: searchText, value: searchText, __isNew__: true };
 
@@ -147,6 +161,7 @@ const SelectPanel = () => {
 
     // adds created value to existing options
     setOptions([newOption, ...options]);
+    //sortLines(newOption);
     handleClear();
 
     onChange([...value, newOption]);
@@ -193,6 +208,7 @@ const SelectPanel = () => {
 
   return (
     <div className="select-panel" role="listbox" ref={listRef}>
+      {/*search section */}
       {!disableSearch && (
         <div className="search">
           <input
@@ -216,7 +232,7 @@ const SelectPanel = () => {
           </button>
         </div>
       )}
-
+      {/*select option section*/}
       <ul className="options">
         {hasSelectAll && hasSelectableOptions && (
           <div className="all-select-style">
@@ -228,6 +244,7 @@ const SelectPanel = () => {
               onClick={() => handleItemClicked(1)}
               itemRenderer={ItemRenderer}
               disabled={disabled}
+              isMain={true}
             />
             <div className="dott-line"></div>
           </div>

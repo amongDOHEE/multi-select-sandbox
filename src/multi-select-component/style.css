@@ -104,9 +104,7 @@
   background: var(--rmsc-hover);
 }
 
-.rmsc .select-item.selected {
-  background: var(--rmsc-selected);
-}
+
 
 .rmsc .no-options {
   padding: var(--rmsc-p);
@@ -147,6 +145,20 @@
 .rmsc .item-renderer {
   display: flex;
   align-items: baseline;
+  margin-top: -3px;
+  margin-bottom: -3px;
+}
+
+.rmsc .item-renderer-main {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: -15px;
+  margin-left: 10px;
+}
+
+.all-select-style:hover,
+.all-select-style:focus {
+  background: #fff !important;
 }
 
 .rmsc .item-renderer input {
@@ -197,10 +209,43 @@
 }
 
 .dott-line {
-  border: dashed 1px rgb(187, 187, 187);
+  border: dashed 0.5px rgb(224, 224, 224);
   margin: 10px
 }
 
 .all-select-style {
-  margin: 10px 20px 0px 20px;
+  margin: 0px 20px 0px 20px;
+}
+
+/*checkbox button css*/
+/* hide original input(checkbox) style */
+input[type='checkbox'],
+input[type='checkbox']:checked {
+  appearance: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  opacity: 0;
+}
+
+.icon-default {
+  font-size: 14px;
+  margin-right: 14px;
+  color: #acacac;
+}
+
+.icon-all-select {
+  color: #acacac;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.checked {
+  color: #34caae;
+}
+
+.all-select-text {
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
 }

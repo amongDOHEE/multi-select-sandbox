@@ -40,6 +40,7 @@ const SelectList = ({ options, onClick, skipIndex }: ISelectListProps) => {
               onClick={(e: any) => onClick(e, tabIndex)}
               itemRenderer={ItemRenderer}
               disabled={o.disabled || disabled}
+              isMain={false}
             />
           </li>
         );

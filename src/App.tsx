@@ -67,7 +67,7 @@ function App() {
             clearSelected: "선택 초기화",
             noOptions: "조건 없음",
             search: "검색",
-            selectAll: "모두 선택하기",
+            selectAll: "엔터테이먼트 & 게임",
             selectAllFiltered: "모두 선택하기(필터)",
             selectSomeItems: "카테고리",
             create: "만들기",

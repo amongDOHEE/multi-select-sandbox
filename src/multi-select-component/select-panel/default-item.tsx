@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCheck, FaCheckSquare } from "react-icons/fa";
 
 import { Option } from "../lib/interfaces";
 
@@ -7,6 +8,7 @@ interface IDefaultItemRendererProps {
   option: Option;
   disabled?: boolean;
   onClick: any;
+  main: boolean;
 }
 
 const DefaultItemRenderer = ({
@@ -14,8 +16,13 @@ const DefaultItemRenderer = ({
   option,
   onClick,
   disabled,
+  main,
 }: IDefaultItemRendererProps) => (
-  <div className={`item-renderer ${disabled && "disabled"}`}>
+  <div
+    className={
+      main ? "item-renderer-main" : `item-renderer ${disabled && "disabled"}`
+    }
+  >
     <input
       type="checkbox"
       onChange={onClick}
@@ -23,7 +30,22 @@ const DefaultItemRenderer = ({
       tabIndex={-1}
       disabled={disabled}
     />
-    <span>{option.label}</span>
+    <div>
+      {main ? (
+        //all select title
+        checked ? (
+          <FaCheckSquare className="icon-all-select checked" />
+        ) : (
+          <FaCheckSquare className="icon-all-select" />
+        )
+      ) : //select one item
+      checked ? (
+        <FaCheck className="icon-default checked" />
+      ) : (
+        <FaCheck className="icon-default" />
+      )}
+      <span className={main ? "all-select-text" : ""}>{option.label}</span>
+    </div>
   </div>
 );
 

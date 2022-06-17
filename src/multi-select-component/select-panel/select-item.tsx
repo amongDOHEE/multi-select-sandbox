@@ -15,6 +15,7 @@ interface ISelectItemProps {
   checked?: boolean;
   tabIndex?: number;
   disabled?: boolean;
+  isMain: boolean; //add: button style (different title & item)
   onSelectionChanged: (checked: boolean) => void;
   onClick: any;
 }
@@ -25,6 +26,7 @@ const SelectItem = ({
   checked,
   tabIndex,
   disabled,
+  isMain,
   onSelectionChanged,
   onClick,
 }: ISelectItemProps) => {
@@ -50,7 +52,9 @@ const SelectItem = ({
 
   return (
     <label
-      className={`select-item ${checked && "selected"}`}
+      className={
+        isMain ? "all-select-style" : `select-item ${checked && "selected"}`
+      }
       role="option"
       aria-selected={checked}
       tabIndex={tabIndex}
@@ -61,6 +65,7 @@ const SelectItem = ({
         checked={checked}
         onClick={handleClick}
         disabled={disabled}
+        main={isMain}
       />
     </label>
   );
