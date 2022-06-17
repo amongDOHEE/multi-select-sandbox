@@ -30,7 +30,7 @@
 .rmsc .dropdown-content .panel-content {
   overflow: hidden;
   font-size: 14px;
-  height: 500px;
+  height: 470px;
   border-radius: var(--rmsc-radius);
   background: var(--rmsc-bg);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 11px rgba(0, 0, 0, 0.1);
@@ -248,4 +248,24 @@ input[type='checkbox']:checked {
   font-size: 15px;
   font-weight: 500;
   text-align: left;
+}
+
+/*mip 중복 css*/
+.btn {
+  background: #34caae;
+  padding: 10px;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 5px;
+  border: 0px;
+  width: 90px;
+  height: 35px;
+  font-size: 14px;
+  font-weight: 500px;
+  float: right;
+  margin-right: 15px;
+}
+
+.blank-style {
+  height: 28px;
 }

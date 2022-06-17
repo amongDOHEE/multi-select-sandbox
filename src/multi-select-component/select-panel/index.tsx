@@ -198,6 +198,13 @@ const SelectPanel = () => {
     getFilteredOptions().then(setFilteredOptions);
   }, [searchTextForFilter, options]);
 
+  //적용 버튼 클릭 시
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const applyButton = () => {
+    // eslint-disable-next-line no-console
+    console.log("hello");
+  };
+
   const creationRef: any = useRef();
   useKey([KEY.ENTER], handleOnCreateOption, { target: creationRef });
 
@@ -269,6 +276,10 @@ const SelectPanel = () => {
           <li className="no-options">{t("noOptions")}</li>
         )}
       </ul>
+      <div className="blank-style"></div>
+      <button className="btn" onClick={() => applyButton()}>
+        적용
+      </button>
     </div>
   );
 };
