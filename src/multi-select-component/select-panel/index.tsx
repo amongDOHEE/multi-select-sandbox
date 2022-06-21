@@ -42,6 +42,7 @@ const SelectPanel = () => {
     isCreatable,
     onCreateOption,
     applyButton, //적용 버튼 클릭 시 함수
+    putComponents,
   } = useMultiSelect();
 
   const listRef = useRef<any>();
@@ -271,6 +272,8 @@ const SelectPanel = () => {
         )}
       </ul>
       <div className="blank-style"></div>
+      {/*외부 컴포넌트를 넣을 수 있는 자리*/}
+      {putComponents()}
       <button className="btn" onClick={applyButton}>
         적용
       </button>

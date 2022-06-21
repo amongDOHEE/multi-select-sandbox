@@ -44,11 +44,6 @@ function App() {
     { label: "오버워치", value: "오버워치" },
     { label: "배틀그라운드", value: "배틀그라운드" },
     { label: "리그오브레전드", value: "리그오브레전드" },
-    { label: "격투게임", value: "격투게임" },
-    { label: "RPG", value: "RPG" },
-    { label: "FPS/TPS", value: "FPS/TPS" },
-    { label: "스포츠게임", value: "스포츠게임" },
-    { label: "시뮬레이션", value: "시뮬레이션" },
   ];
   const [selected, setSelected] = useState([]);
 
@@ -58,12 +53,21 @@ function App() {
     console.log("hello");
   };
 
+  const divElement = () => {
+    return (
+      <div>
+        <div>Fillter(1)</div>
+        <div>Fillter(2)</div>
+      </div>
+    );
+  };
   return (
     <div className="App">
       <div>
         <MultiSelect
           className="fillter-width"
           applyButton={buttonTest}
+          putComponents={divElement}
           options={options}
           value={selected}
           onChange={setSelected}

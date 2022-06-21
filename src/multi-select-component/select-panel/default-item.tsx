@@ -39,7 +39,9 @@ const DefaultItemRenderer = ({
           <FaCheckSquare className="icon-all-select" />
         )
       ) : //select one item
-      checked ? (
+      option.value.length < 1 ? (
+        <div></div>
+      ) : checked ? (
         <FaCheck className="icon-default checked" />
       ) : (
         <FaCheck className="icon-default" />

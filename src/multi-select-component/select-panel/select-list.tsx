@@ -15,6 +15,11 @@ interface ISelectListProps {
 const SelectList = ({ options, onClick, skipIndex }: ISelectListProps) => {
   const { disabled, value, onChange, ItemRenderer } = useMultiSelect();
 
+  //줄맞춤용
+  if (options.length % 5 !== 0) {
+    options.push({ label: "", value: "" });
+  }
+
   const handleSelectionChanged = (option: Option, checked: boolean) => {
     if (disabled) return;
 

@@ -35,5 +35,6 @@ export interface ISelectProps {
   isCreatable?: boolean;
   onCreateOption?: any;
   closeOnChangedValue?: boolean;
-  applyButton?: any;
+  applyButton?: any; //적용 버튼 동작함수
+  putComponents?: any; //패널 안에 넣을 수 있는 요소
 }

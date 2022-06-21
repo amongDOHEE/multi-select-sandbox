@@ -35,7 +35,7 @@
 .rmsc .dropdown-content .panel-content {
   overflow: hidden;
   font-size: 14px;
-  height: 470px;
+  padding-bottom: 15px;
   border-radius: var(--rmsc-radius);
   background: var(--rmsc-bg);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 11px rgba(0, 0, 0, 0.1);
