@@ -41,6 +41,7 @@ const SelectPanel = () => {
     debounceDuration,
     isCreatable,
     onCreateOption,
+    applyButton, //적용 버튼 클릭 시 함수
   } = useMultiSelect();
 
   const listRef = useRef<any>();
@@ -198,13 +199,6 @@ const SelectPanel = () => {
     getFilteredOptions().then(setFilteredOptions);
   }, [searchTextForFilter, options]);
 
-  //적용 버튼 클릭 시
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const applyButton = () => {
-    // eslint-disable-next-line no-console
-    console.log("hello");
-  };
-
   const creationRef: any = useRef();
   useKey([KEY.ENTER], handleOnCreateOption, { target: creationRef });
 
@@ -277,7 +271,7 @@ const SelectPanel = () => {
         )}
       </ul>
       <div className="blank-style"></div>
-      <button className="btn" onClick={() => applyButton()}>
+      <button className="btn" onClick={applyButton}>
         적용
       </button>
     </div>

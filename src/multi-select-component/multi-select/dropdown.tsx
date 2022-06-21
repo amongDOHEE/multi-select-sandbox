@@ -10,25 +10,25 @@ import { useKey } from "../hooks/use-key";
 import { useMultiSelect } from "../hooks/use-multi-select";
 import { KEY } from "../lib/constants";
 import SelectPanel from "../select-panel";
-import { Cross } from "../select-panel/cross";
+//import { Cross } from "../select-panel/cross";
 import { Arrow } from "./arrow";
 import { DropdownHeader } from "./header";
 import { Loading } from "./loading";
 
 const Dropdown = () => {
   const {
-    t,
+    //t,
     onMenuToggle,
     ArrowRenderer,
     shouldToggleOnHover,
     isLoading,
     disabled,
-    onChange,
+    //onChange,
     labelledBy,
     value,
     isOpen,
     defaultIsOpen,
-    ClearSelectedIcon,
+    //ClearSelectedIcon,
     closeOnChangedValue,
   } = useMultiSelect();
 
@@ -101,11 +101,15 @@ const Dropdown = () => {
     isInternalExpand && setExpanded(isLoading || disabled ? false : !expanded);
   };
 
+  {
+    /** 
   const handleClearSelected = (e: any) => {
     e.stopPropagation();
     onChange([]);
     isInternalExpand && setExpanded(false);
   };
+  */
+  }
 
   return (
     <div
@@ -123,9 +127,11 @@ const Dropdown = () => {
     >
       <div className="dropdown-heading" onClick={toggleExpanded}>
         <div className="dropdown-heading-value">
-          <DropdownHeader />
+          {/*input text (select)*/}
+          {<DropdownHeader />}
         </div>
         {isLoading && <Loading />}
+        {/** 
         {value.length > 0 && ClearSelectedIcon !== null && (
           <button
             type="button"
@@ -137,6 +143,7 @@ const Dropdown = () => {
             {ClearSelectedIcon || <Cross />}
           </button>
         )}
+        */}
         <FinalArrow expanded={expanded} />
       </div>
       {expanded && (

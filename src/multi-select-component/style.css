@@ -4,6 +4,7 @@
   --rmsc-selected: #e2e6ea;
   --rmsc-border: #ccc;
   --rmsc-gray: #aaa;
+  --rmsc-mint: #34caae;
   --rmsc-bg: #fff;
   --rmsc-p: 10px;
   --rmsc-radius: 4px;
@@ -16,6 +17,10 @@
 }
 
 .rmsc .gray {
+  color: var(--rmsc-gray);
+}
+
+.mint {
   color: var(--rmsc-gray);
 }
 
@@ -40,8 +45,8 @@
   position: relative;
   outline: 0;
   background-color: var(--rmsc-bg);
-  border: 1px solid var(--rmsc-border);
-  border-radius: var(--rmsc-radius);
+  border: 2px solid var(--rmsc-border);
+  border-radius: 8px;
 }
 
 .rmsc .dropdown-container[aria-disabled="true"]:focus-within {
@@ -268,4 +273,9 @@ input[type='checkbox']:checked {
 
 .blank-style {
   height: 28px;
+}
+
+.dropdown-header-font {
+  font-size: 15px;
+  font-weight: 600;
 }

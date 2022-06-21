@@ -35,4 +35,5 @@ export interface ISelectProps {
   isCreatable?: boolean;
   onCreateOption?: any;
   closeOnChangedValue?: boolean;
+  applyButton?: any;
 }

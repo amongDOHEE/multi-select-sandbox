@@ -52,11 +52,18 @@ function App() {
   ];
   const [selected, setSelected] = useState([]);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const buttonTest = () => {
+    // eslint-disable-next-line no-console
+    console.log("hello");
+  };
+
   return (
     <div className="App">
       <div>
         <MultiSelect
           className="fillter-width"
+          applyButton={buttonTest}
           options={options}
           value={selected}
           onChange={setSelected}
