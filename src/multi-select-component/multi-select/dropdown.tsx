@@ -18,17 +18,17 @@ import { Loading } from "./loading";
 const Dropdown = () => {
   const {
     //t,
+    //onChange,
     onMenuToggle,
     ArrowRenderer,
     shouldToggleOnHover,
     isLoading,
     disabled,
-    //onChange,
     labelledBy,
     value,
     isOpen,
     defaultIsOpen,
-    //ClearSelectedIcon,
+    ClearSelectedIcon,
     closeOnChangedValue,
   } = useMultiSelect();
 
@@ -114,7 +114,11 @@ const Dropdown = () => {
   return (
     <div
       tabIndex={0}
-      className="dropdown-container"
+      className={
+        value.length > 0 && ClearSelectedIcon !== null
+          ? "dropdown-container-select"
+          : "dropdown-container"
+      }
       aria-labelledby={labelledBy}
       aria-expanded={expanded}
       aria-readonly={true}
@@ -125,7 +129,7 @@ const Dropdown = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="dropdown-heading" onClick={toggleExpanded}>
+      <div className={"dropdown-heading"} onClick={toggleExpanded}>
         <div className="dropdown-heading-value">
           {/*input text (select)*/}
           {<DropdownHeader />}
