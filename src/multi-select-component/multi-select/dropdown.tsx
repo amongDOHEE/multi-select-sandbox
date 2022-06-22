@@ -10,7 +10,6 @@ import { useKey } from "../hooks/use-key";
 import { useMultiSelect } from "../hooks/use-multi-select";
 import { KEY } from "../lib/constants";
 import SelectPanel from "../select-panel";
-//import { Cross } from "../select-panel/cross";
 import { Arrow } from "./arrow";
 import { DropdownHeader } from "./header";
 import { Loading } from "./loading";
@@ -18,7 +17,7 @@ import { Loading } from "./loading";
 const Dropdown = () => {
   const {
     //t,
-    //onChange,
+    onChange,
     onMenuToggle,
     ArrowRenderer,
     shouldToggleOnHover,
@@ -102,13 +101,12 @@ const Dropdown = () => {
   };
 
   {
-    /** 
-  const handleClearSelected = (e: any) => {
-    e.stopPropagation();
-    onChange([]);
-    isInternalExpand && setExpanded(false);
-  };
-  */
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const handleClearSelected = (e: any) => {
+      e.stopPropagation();
+      onChange([]);
+      isInternalExpand && setExpanded(false);
+    };
   }
 
   return (
@@ -129,25 +127,19 @@ const Dropdown = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      {/*선택 시 선택 조건 개수 배지*/}
+      {value.length > 0 && ClearSelectedIcon !== null ? (
+        <div className="select-count">{value.length}</div>
+      ) : (
+        <div></div>
+      )}
       <div className={"dropdown-heading"} onClick={toggleExpanded}>
         <div className="dropdown-heading-value">
           {/*input text (select)*/}
           {<DropdownHeader />}
         </div>
         {isLoading && <Loading />}
-        {/** 
-        {value.length > 0 && ClearSelectedIcon !== null && (
-          <button
-            type="button"
-            className="clear-selected-button"
-            onClick={handleClearSelected}
-            disabled={disabled}
-            aria-label={t("clearSelected")}
-          >
-            {ClearSelectedIcon || <Cross />}
-          </button>
-        )}
-        */}
+
         <FinalArrow expanded={expanded} />
       </div>
       {expanded && (

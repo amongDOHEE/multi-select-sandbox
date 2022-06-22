@@ -293,3 +293,18 @@ input[type='checkbox']:checked {
   font-size: 15px;
   font-weight: 600;
 }
+
+.select-count {
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #34caae;
+  border-radius: 100%;
+  position: absolute;
+  margin-top: -10px;
+  margin-left: 100px;
+}
