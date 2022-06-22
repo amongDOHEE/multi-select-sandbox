@@ -19,18 +19,4 @@ export const DropdownHeader = () => {
       {customText || t("selectSomeItems")}
     </span>
   );
-
-  /*
-  const allSelected = value.length === options.length;
-  const getSelectedText = () => value.map((s) => s.label).join(", ");
-
-  return noneSelected ? (
-    <span className="gray">{customText || t("selectSomeItems")}</span>
-  ) : (
-    <span>
-      {customText ||
-        (allSelected ? t("allItemsAreSelected") : getSelectedText())}
-    </span>
-  );
-  */
 };

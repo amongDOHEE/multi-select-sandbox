@@ -3,31 +3,14 @@
  * user selects the component.  It encapsulates the search filter, the
  * Select-all item, and the list of options.
  */
-import React, {
-  //useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import { useKey } from "../hooks/use-key";
 import { useMultiSelect } from "../hooks/use-multi-select";
 import { KEY } from "../lib/constants";
-//import { debounce } from "../lib/debounce";
 import { filterOptions } from "../lib/simple-match-utils";
-//import { Cross } from "./cross";
 import SelectItem from "./select-item";
 import SelectList from "./select-list";
-
-{
-  /** 
-enum FocusType {
-  SEARCH = 0,
-  NONE = -1,
-}
-*/
-}
 
 const SelectPanel = () => {
   const {
@@ -41,8 +24,7 @@ const SelectPanel = () => {
     disabled,
     disableSearch,
     hasSelectAll,
-    //ClearIcon,
-    //debounceDuration,
+
     isCreatable,
     onCreateOption,
     applyButton, //적용 버튼 클릭 시 함수
@@ -55,17 +37,6 @@ const SelectPanel = () => {
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [searchTextForFilter, setSearchTextForFilter] = useState("");
   const [focusIndex, setFocusIndex] = useState(0);
-  {
-    /**
-  const debouncedSearch = useCallback(
-    debounce(
-      (query: React.SetStateAction<string>) => setSearchTextForFilter(query),
-      debounceDuration
-    ),
-    []
-  );
-   */
-  }
 
   const skipIndex = useMemo(() => {
     let start = 0;
@@ -103,18 +74,6 @@ const SelectPanel = () => {
     onChange(newOptions);
   };
 
-  {
-    /**
-  const handleSearchChange = (e: {
-    target: { value: React.SetStateAction<string> };
-  }) => {
-    debouncedSearch(e.target.value);
-    setSearchText(e.target.value);
-    setFocusIndex(FocusType.SEARCH);
-  };
-   */
-  }
-
   const handleClear = () => {
     setSearchTextForFilter("");
     setSearchText("");
@@ -146,28 +105,6 @@ const SelectPanel = () => {
   useKey([KEY.ARROW_DOWN, KEY.ARROW_UP], handleKeyDown, {
     target: listRef,
   });
-
-  {
-    /** 
-  const handleSearchFocus = () => {
-    setFocusIndex(FocusType.SEARCH);
-  };
-  */
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  /*
-  const sortLines = (newOption) => {
-    setOptions([newOption, ...options]);
-    if (options.length % 5 !== 0) {
-      //sort 1 line -> 5 select data
-      for (let i = 0; i < 5 - (options.length % 5); i++) {
-        setOptions([...options, { label: "hello", value: "hello" }]);
-      }
-    }
-  };
-  줄 개수 1줄, 5개씩 맞추기
-  */
 
   const handleOnCreateOption = async () => {
     let newOption = { label: searchText, value: searchText, __isNew__: true };
@@ -226,31 +163,6 @@ const SelectPanel = () => {
 
   return (
     <div className="select-panel" role="listbox" ref={listRef}>
-      {/*search section
-      {!disableSearch && (
-        <div className="search">
-          <input
-            placeholder={t("search")}
-            type="text"
-            aria-describedby={t("search")}
-            onChange={handleSearchChange}
-            onFocus={handleSearchFocus}
-            value={searchText}
-            ref={searchInputRef}
-            tabIndex={0}
-          />
-          <button
-            type="button"
-            className="search-clear-button"
-            hidden={!searchText}
-            onClick={handleClear}
-            aria-label={t("clearSearch")}
-          >
-            {ClearIcon || <Cross />}
-          </button>
-        </div>
-      )}
-      */}
       {/*select option section*/}
       <ul className="options">
         {hasSelectAll && hasSelectableOptions && (
