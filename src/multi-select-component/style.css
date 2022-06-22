@@ -169,6 +169,7 @@
 }
 
 .rmsc .item-renderer-main {
+  font-weight: 700;
   display: flex;
   align-items: baseline;
   margin-bottom: -15px;
@@ -255,7 +256,8 @@ input[type='checkbox']:checked {
 
 .icon-all-select {
   color: #acacac;
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: -4px;
   margin-right: 10px;
 }
 
@@ -306,5 +308,5 @@ input[type='checkbox']:checked {
   border-radius: 100%;
   position: absolute;
   margin-top: -10px;
-  margin-left: 100px;
+  margin-left: 90%;
 }

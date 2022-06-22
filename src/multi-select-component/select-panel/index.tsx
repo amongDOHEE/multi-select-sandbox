@@ -4,7 +4,7 @@
  * Select-all item, and the list of options.
  */
 import React, {
-  useCallback,
+  //useCallback,
   useEffect,
   useMemo,
   useRef,
@@ -14,15 +14,19 @@ import React, {
 import { useKey } from "../hooks/use-key";
 import { useMultiSelect } from "../hooks/use-multi-select";
 import { KEY } from "../lib/constants";
-import { debounce } from "../lib/debounce";
+//import { debounce } from "../lib/debounce";
 import { filterOptions } from "../lib/simple-match-utils";
-import { Cross } from "./cross";
+//import { Cross } from "./cross";
 import SelectItem from "./select-item";
 import SelectList from "./select-list";
 
+{
+  /** 
 enum FocusType {
   SEARCH = 0,
   NONE = -1,
+}
+*/
 }
 
 const SelectPanel = () => {
@@ -37,8 +41,8 @@ const SelectPanel = () => {
     disabled,
     disableSearch,
     hasSelectAll,
-    ClearIcon,
-    debounceDuration,
+    //ClearIcon,
+    //debounceDuration,
     isCreatable,
     onCreateOption,
     applyButton, //적용 버튼 클릭 시 함수
@@ -51,6 +55,8 @@ const SelectPanel = () => {
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [searchTextForFilter, setSearchTextForFilter] = useState("");
   const [focusIndex, setFocusIndex] = useState(0);
+  {
+    /**
   const debouncedSearch = useCallback(
     debounce(
       (query: React.SetStateAction<string>) => setSearchTextForFilter(query),
@@ -58,6 +64,8 @@ const SelectPanel = () => {
     ),
     []
   );
+   */
+  }
 
   const skipIndex = useMemo(() => {
     let start = 0;
@@ -95,6 +103,8 @@ const SelectPanel = () => {
     onChange(newOptions);
   };
 
+  {
+    /**
   const handleSearchChange = (e: {
     target: { value: React.SetStateAction<string> };
   }) => {
@@ -102,6 +112,8 @@ const SelectPanel = () => {
     setSearchText(e.target.value);
     setFocusIndex(FocusType.SEARCH);
   };
+   */
+  }
 
   const handleClear = () => {
     setSearchTextForFilter("");
@@ -135,9 +147,13 @@ const SelectPanel = () => {
     target: listRef,
   });
 
+  {
+    /** 
   const handleSearchFocus = () => {
     setFocusIndex(FocusType.SEARCH);
   };
+  */
+  }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   /*
@@ -210,7 +226,7 @@ const SelectPanel = () => {
 
   return (
     <div className="select-panel" role="listbox" ref={listRef}>
-      {/*search section */}
+      {/*search section
       {!disableSearch && (
         <div className="search">
           <input
@@ -234,6 +250,7 @@ const SelectPanel = () => {
           </button>
         </div>
       )}
+      */}
       {/*select option section*/}
       <ul className="options">
         {hasSelectAll && hasSelectableOptions && (
