@@ -3,6 +3,8 @@
  * user selects the component.  It encapsulates the search filter, the
  * Select-all item, and the list of options.
  */
+import "../style.css";
+
 import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import { useKey } from "../hooks/use-key";

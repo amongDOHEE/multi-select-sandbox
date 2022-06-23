@@ -1,5 +1,6 @@
 import "./App.css";
 
+//import { MultiSelect } from "@sandboxnetwork/mip-multi-selector";
 import React, { useState } from "react";
 
 import MultiSelect from "./multi-select-component/multi-select";

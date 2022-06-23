@@ -28,7 +28,7 @@
   position: absolute;
   z-index: 1;
   top: 100%;
-  width: 950px;
+  width: 45vw;
   padding: 5px;
 }
 
@@ -45,22 +45,22 @@
   position: relative;
   outline: 0;
   background-color: var(--rmsc-bg);
-  border: 2px solid var(--rmsc-border);
-  border-radius: 8px;
+  border: 1px solid var(--rmsc-border);
+  border-radius: 5px;
 }
 
 .rmsc .dropdown-container-select {
   position: relative;
   outline: 0;
   background-color: var(--rmsc-bg);
-  border: 2px solid #34caae;
-  box-shadow: #34caae 0 0 0 1px;
+  border: 1px solid var(--rmsc-mint);
+  box-shadow: var(--rmsc-mint) 0 0 0 1px;
   border-radius: 8px;
 }
 
 
 .select-items {
-  border-color: #34caae;
+  border-color: var(--rmsc-mint);
 }
 
 .rmsc .dropdown-container[aria-disabled="true"]:focus-within {
@@ -223,9 +223,13 @@
 }
 
 .item-styles {
-  width: 180px;
+  width: 150px;
+  font-size: 14px;
+  font-weight: 350;
   text-align: left;
   display: inline-block;
+  letter-spacing: -1.5px;
+  padding-left: -20px;
 }
 
 .dott-line {
@@ -250,7 +254,7 @@ input[type='checkbox']:checked {
 
 .icon-default {
   font-size: 14px;
-  margin-right: 14px;
+  margin-right: 5px;
   color: #acacac;
 }
 
@@ -262,7 +266,7 @@ input[type='checkbox']:checked {
 }
 
 .checked {
-  color: #34caae;
+  color: var(--rmsc-mint);
 }
 
 .all-select-text {
@@ -273,11 +277,11 @@ input[type='checkbox']:checked {
 
 /*mip 중복 css*/
 .btn {
-  background: #34caae;
+  background: var(--rmsc-mint);
   padding: 10px;
   color: #fff;
   font-size: 15px;
-  border-radius: 5px;
+  border-radius: 2px;
   border: 0px;
   width: 90px;
   height: 35px;
@@ -304,7 +308,7 @@ input[type='checkbox']:checked {
   color: white;
   font-size: 12px;
   font-weight: 500;
-  background-color: #34caae;
+  background-color: var(--rmsc-mint);
   border-radius: 100%;
   position: absolute;
   margin-top: -10px;
