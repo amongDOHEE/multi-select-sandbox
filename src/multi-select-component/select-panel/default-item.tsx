@@ -1,3 +1,5 @@
+import "../asset/check-off.png";
+
 import React from "react";
 import { FaCheck, FaCheckSquare } from "react-icons/fa";
 
@@ -34,17 +36,17 @@ const DefaultItemRenderer = ({
       {main ? (
         //all select title
         checked ? (
-          <FaCheckSquare className="icon-all-select checked" />
+          <FaCheckSquare className="icon-all-select" color={"#34caae"} />
         ) : (
-          <FaCheckSquare className="icon-all-select" />
+          <FaCheckSquare className="icon-all-select" color={"#acacac"} />
         )
       ) : //select one item
       option.value.length < 1 ? (
         <div></div>
       ) : checked ? (
-        <FaCheck className="icon-default checked" />
+        <FaCheck className="icon-default" color={"#34caae"} />
       ) : (
-        <FaCheck className="icon-default" />
+        <FaCheck className="icon-default" color={"#acacac"} />
       )}
       <span className={main ? "all-select-text" : ""}>{option.label}</span>
     </div>

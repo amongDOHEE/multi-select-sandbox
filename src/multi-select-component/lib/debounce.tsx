@@ -1,4 +1,5 @@
-import { SetStateAction } from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { SetStateAction } from "react";
 
 export const debounce = (
   func: { (query: SetStateAction<string>): void; apply?: any },

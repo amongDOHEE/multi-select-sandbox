@@ -1,4 +1,6 @@
 import { ReactNode } from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 
 export interface Option {
   value: string;
@@ -11,6 +13,7 @@ export interface ISelectProps {
   options: Option[];
   value: Option[];
   onChange?: any;
+  pannelWidth?: any;
   valueRenderer?: (selected: Option[], options: Option[]) => ReactNode;
   ItemRenderer?: any;
   ArrowRenderer?: (expanded: any) => JSX.Element;

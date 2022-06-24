@@ -1,5 +1,7 @@
-import { Option } from "./interfaces";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
 
+import { Option } from "./interfaces";
 /**
  * A collection of string matching algorithms built with React Select in mind.
  */

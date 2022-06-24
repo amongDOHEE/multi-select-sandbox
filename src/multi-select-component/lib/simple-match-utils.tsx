@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React from "react";
+
 import { Option } from "./interfaces";
 
 export function filterOptions(options: Option[], filter?: string): Option[] {

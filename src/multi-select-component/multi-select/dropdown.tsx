@@ -17,6 +17,7 @@ import { Loading } from "./loading";
 const Dropdown = () => {
   const {
     //t,
+    pannelWidth,
     onChange,
     onMenuToggle,
     ArrowRenderer,
@@ -88,7 +89,7 @@ const Dropdown = () => {
   const handleBlur = (e: any) => {
     if (!e.currentTarget.contains(e.relatedTarget) && isInternalExpand) {
       setHasFocus(false);
-      setExpanded(false);
+      setExpanded(true); //이 부분 변경 - 테스트를 위함 (default: false)
     }
   };
 
@@ -143,7 +144,7 @@ const Dropdown = () => {
         <FinalArrow expanded={expanded} />
       </div>
       {expanded && (
-        <div className="dropdown-content">
+        <div className="dropdown-content" style={{ width: pannelWidth }}>
           <div className="panel-content">
             <SelectPanel />
           </div>

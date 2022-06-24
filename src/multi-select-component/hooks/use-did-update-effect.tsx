@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { useEffect, useRef } from "react";
 
 /**
  * similar to `useEffect` but gets triggered only when value changes

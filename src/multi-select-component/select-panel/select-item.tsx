@@ -2,6 +2,8 @@
 /**
  * This component represents an individual item in the multi-select drop-down
  */
+
+import React from "react";
 import { useRef } from "react";
 
 import { useKey } from "../hooks/use-key";

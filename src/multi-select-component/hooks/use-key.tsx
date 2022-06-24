@@ -1,7 +1,8 @@
 /*
  * copied from https://github.com/imbhargav5/rooks/blob/master/packages/shared/useKeyRef.ts
  */
-import { Ref, useCallback, useEffect, useMemo, useRef } from "react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { Ref, useCallback, useEffect, useMemo, useRef } from "react";
 
 interface Options {
   /**

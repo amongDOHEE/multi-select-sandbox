@@ -67,6 +67,7 @@ function App() {
       <div>
         <MultiSelect
           className="fillter-width"
+          pannelWidth={`650px`}
           applyButton={buttonTest}
           putComponents={divElement}
           options={options}
