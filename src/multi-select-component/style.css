@@ -2,20 +2,23 @@
   --rmsc-main: #34caae;
   --rmsc-hover: #f1f3f5;
   --rmsc-selected: #e2e6ea;
-  --rmsc-border: #ccc;
-  --rmsc-gray: #aaa;
+  --rmsc-border: rgb(221, 221, 221);
+  --rmsc-gray: rgb(207, 207, 207);
   --rmsc-gray2: #acacac;
   --rmsc-mint: #34caae;
   --rmsc-bg: #fff;
   --rmsc-p: 8px;
+  --rmsc-p4: 4px;
   --rmsc-p10: 10px;
-  --rmsc-radius: 4px;
+  --rmsc-radius: 3px;
   --rmsc-p5: 5px;
   --rmsc-h: 38px;
+  --rmsc-f11: 11px;
   --rmsc-f12: 12px;
-  --rmsc-f14: 14px;
+  --rmsc-f14: 14.5px;
   --rmsc-f15: 15px;
   --rmsc-letter: -1.5px;
+  --rmsc-24: 24px;
   --rmsc-25: 25px;
   --rmsc-m-3: -3px;
   --rmsc-m-10: -10px;
@@ -67,7 +70,7 @@
   background-color: var(--rmsc-bg);
   border: 1px solid var(--rmsc-mint);
   box-shadow: var(--rmsc-mint) 0 0 0 1px;
-  border-radius: 8px;
+  border-radius: var(--rmsc-p5);
 }
 
 
@@ -97,10 +100,13 @@
 }
 
 .rmsc .dropdown-heading .dropdown-heading-value {
+  color: var(--rmsc-mint);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   flex: 1;
+  text-align: left;
+  margin-left: var(--rmsc-f12);
 }
 
 .rmsc .clear-selected-button {
@@ -140,7 +146,7 @@
 .rmsc .no-options {
   padding: var(--rmsc-p);
   text-align: center;
-  color: var(--rmsc-gray);
+  color: var(--rmsc-mint);
 }
 
 .rmsc .search {
@@ -178,10 +184,11 @@
   align-items: baseline;
   margin-top: var(--rmsc-m-3);
   margin-bottom: var(--rmsc-m-3);
+
 }
 
 .rmsc .item-renderer-main {
-  font-weight: 700;
+  font-weight: 600;
   display: flex;
   align-items: baseline;
   margin-left: var(--rmsc-p5);
@@ -234,7 +241,7 @@
 }
 
 .rmsc .item-styles {
-  width: 150px;
+  width: 115px;
   font-size: var(--rmsc-f14);
   font-weight: var(--rmsc-fw350);
   text-align: left;
@@ -264,9 +271,9 @@
 }
 
 .rmsc .icon-default {
-  font-size: var(--rmsc-f1);
+  font-size: 10px;
   color: var(--rmsc-gray2);
-  margin-right: var(--rmsc-p5);
+  margin-right: 8px;
 }
 
 .rmsc .icon-all-select {
@@ -281,7 +288,7 @@
 }
 
 .rmsc .all-select-text {
-  font-size: var(--rmsc-f15);
+  font-size: var(--rmsc-f14);
   font-weight: 500;
   text-align: left;
 }
@@ -307,21 +314,23 @@
 }
 
 .rmsc .dropdown-header-font {
-  font-size: var(--rmsc-f15);
-  font-weight: 600;
+  letter-spacing: -1.1px;
+  font-size: var(--rmsc-f14);
+  font-weight: 500;
 }
 
 .rmsc .select-count {
-  width: var(--rmsc-25);
-  height: var(--rmsc-25);
+  width: var(--rmsc-24);
+  height: var(--rmsc-24);
   padding: var(--rmsc-p5);
   text-align: center;
   color: white;
-  font-size: var(--rmsc-f12);
+  font-size: var(--rmsc-f11);
   font-weight: 500;
   background-color: var(--rmsc-mint);
   border-radius: 100%;
   position: absolute;
   margin-top: var(--rmsc-m-10);
   margin-left: 90%;
+  letter-spacing: -1.1px;
 }

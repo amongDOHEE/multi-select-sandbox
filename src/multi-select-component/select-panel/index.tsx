@@ -136,6 +136,14 @@ const SelectPanel = () => {
     setFocusIndex(newFocus);
   };
 
+  //컴포넌트를 넣기 않기를 바랄때 체크 (default)
+  const wantAddComponent = () => {
+    if (putComponents !== undefined) {
+      return putComponents();
+    }
+    return "";
+  };
+
   useEffect(() => {
     listRef?.current?.querySelector(`[tabIndex='${focusIndex}']`)?.focus();
   }, [focusIndex]);
@@ -204,7 +212,7 @@ const SelectPanel = () => {
       </ul>
       <div className="blank-style"></div>
       {/*외부 컴포넌트를 넣을 수 있는 자리*/}
-      {putComponents()}
+      {wantAddComponent()}
       <button className="btn" onClick={applyButton}>
         적용
       </button>

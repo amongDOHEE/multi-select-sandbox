@@ -41,10 +41,10 @@ function App() {
     { label: "연애/섹슈얼", value: "연애/섹슈얼" },
     { label: "카트라이더", value: "카트라이더" },
     { label: "TCG/CCG", value: "TCG/CCG" },
-    { label: "마인크래프트/로블록스", value: "마인크래프트/로블록스" },
     { label: "오버워치", value: "오버워치" },
     { label: "배틀그라운드", value: "배틀그라운드" },
     { label: "리그오브레전드", value: "리그오브레전드" },
+    { label: "배틀그라운드", value: "배틀그라운드" },
   ];
   const [selected, setSelected] = useState([]);
 
@@ -54,14 +54,6 @@ function App() {
     console.log("hello");
   };
 
-  const divElement = () => {
-    return (
-      <div>
-        <div>Fillter(1)</div>
-        <div>Fillter(2)</div>
-      </div>
-    );
-  };
   return (
     <div className="App">
       <div>
@@ -69,21 +61,13 @@ function App() {
           className="fillter-width"
           pannelWidth={`650px`}
           applyButton={buttonTest}
-          putComponents={divElement}
           options={options}
           value={selected}
           onChange={setSelected}
           labelledBy="Select"
           overrideStrings={{
-            allItemsAreSelected: "모든 조건 선택",
-            clearSearch: "검색 초기화",
-            clearSelected: "선택 초기화",
-            noOptions: "조건 없음",
-            search: "검색",
             selectAll: "엔터테이먼트 & 게임",
-            selectAllFiltered: "모두 선택하기(필터)",
             selectSomeItems: "카테고리",
-            create: "만들기",
           }}
         />
       </div>

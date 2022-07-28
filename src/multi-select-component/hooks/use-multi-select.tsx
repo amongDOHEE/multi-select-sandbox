@@ -3,15 +3,15 @@ import React, { useEffect, useState } from "react";
 import { ISelectProps, Option } from "../lib/interfaces";
 
 const defaultStrings = {
-  allItemsAreSelected: "All items are selected.",
-  clearSearch: "Clear Search",
-  clearSelected: "Clear Selected",
-  noOptions: "No options",
-  search: "Search",
+  allItemsAreSelected: "모든 조건 선택",
+  clearSearch: "검색 초기화",
+  clearSelected: "선택 초기화",
+  noOptions: "조건 없음",
+  search: "검색",
   selectAll: "Select All",
-  selectAllFiltered: "Select All (Filtered)",
+  selectAllFiltered: "모두 선택하기(필터)",
   selectSomeItems: "Select...",
-  create: "Create",
+  create: "만들기",
 };
 
 const defaultProps: Partial<ISelectProps> = {

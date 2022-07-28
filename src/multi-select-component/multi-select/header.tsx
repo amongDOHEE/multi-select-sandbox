@@ -10,7 +10,7 @@ export const DropdownHeader = () => {
 
   return noneSelected ? (
     //미선택시
-    <span className="dropdown-header-font gray">
+    <span className="dropdown-header-font">
       {customText || t("selectSomeItems")}
     </span>
   ) : (

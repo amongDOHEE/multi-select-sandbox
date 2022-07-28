@@ -89,7 +89,7 @@ const Dropdown = () => {
   const handleBlur = (e: any) => {
     if (!e.currentTarget.contains(e.relatedTarget) && isInternalExpand) {
       setHasFocus(false);
-      setExpanded(false);
+      setExpanded(true); //이 부분 변경 - 테스트를 위함 (default: false)
     }
   };
 
