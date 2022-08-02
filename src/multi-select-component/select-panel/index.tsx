@@ -176,27 +176,54 @@ const SelectPanel = () => {
       {/*select option section*/}
       <ul className="options">
         {hasSelectAll && hasSelectableOptions && (
-          <div className="all-select-style">
-            <SelectItem
-              tabIndex={skipIndex === 1 ? 0 : 1}
-              checked={isAllOptionSelected}
-              option={selectAllOption}
-              onSelectionChanged={selectAllChanged}
-              onClick={() => handleItemClicked(1)}
-              itemRenderer={ItemRenderer}
-              disabled={disabled}
-              isMain={true}
-            />
-            <div className="dott-line"></div>
+          <div>
+            <div className="split-section">
+              <SelectItem
+                tabIndex={skipIndex === 1 ? 0 : 1}
+                checked={isAllOptionSelected}
+                option={selectAllOption}
+                onSelectionChanged={selectAllChanged}
+                onClick={() => handleItemClicked(1)}
+                itemRenderer={ItemRenderer}
+                disabled={disabled}
+                isMain={true}
+              />
+              <div className="dott-line"></div>
+            </div>
+            <div className="split-section">
+              <SelectItem
+                tabIndex={skipIndex === 1 ? 0 : 1}
+                checked={isAllOptionSelected}
+                option={selectAllOption}
+                onSelectionChanged={selectAllChanged}
+                onClick={() => handleItemClicked(1)}
+                itemRenderer={ItemRenderer}
+                disabled={disabled}
+                isMain={true}
+              />
+              <div className="dott-line"></div>
+            </div>
           </div>
         )}
 
+        {/**일단 이 부분 분할 */}
         {filteredOptions.length ? (
-          <SelectList
-            skipIndex={skipIndex}
-            options={filteredOptions}
-            onClick={(_e: any, index: number) => handleItemClicked(index)}
-          />
+          <div>
+            <div className="split-section">
+              <SelectList
+                skipIndex={skipIndex}
+                options={filteredOptions.filter((o) => o.type === "ent")}
+                onClick={(_e: any, index: number) => handleItemClicked(index)}
+              />
+            </div>
+            <div className="split-section">
+              <SelectList
+                skipIndex={skipIndex}
+                options={filteredOptions.filter((o) => o.type === "game")}
+                onClick={(_e: any, index: number) => handleItemClicked(index)}
+              />
+            </div>
+          </div>
         ) : showCratable ? (
           <li
             onClick={handleOnCreateOption}

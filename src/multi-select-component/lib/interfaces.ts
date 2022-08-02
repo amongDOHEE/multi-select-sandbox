@@ -6,6 +6,7 @@ export interface Option {
   value: string;
   label: string;
   key?: string;
+  type?: string;
   disabled?: boolean;
 }
 

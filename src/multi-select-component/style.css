@@ -51,9 +51,9 @@
   overflow: hidden;
   font-size: var(--rmsc-f14);
   padding-bottom: var(--rmsc-f15);
-  border-radius: var(--rmsc-radius);
+  border-radius: 10px;
   background: var(--rmsc-bg);
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 11px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0 1px rgba(161, 161, 161, 0.1), 0 4px 11px rgba(0, 0, 0, 0.1);
 }
 
 .rmsc .dropdown-container {
@@ -120,7 +120,8 @@
 .rmsc .options {
   overflow-y: auto;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
+  padding-top: 25px;
 }
 
 .rmsc .options li {
@@ -255,11 +256,15 @@
   height: 1px;
   /* dashed border */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAAABCAYAAABHRpXVAAAABHNCSVQICAgIfAhkiAAAAB1JREFUKFNj3Hvi/H8GJOBsYciIzB+VHw2fwZg+AFq4WAKaYTwaAAAAAElFTkSuQmCC");
-  margin: 14px;
+  margin: 8px;
+  margin-top: -5px;
 }
 
-.rmsc .all-select-style {
-  margin: var(--rmsc-p10) var(--rmsc-m0);
+.rmsc .split-section {
+  width: 45%;
+  display: inline-block;
+  text-align: left;
+  margin-right: 20px;
 }
 
 /*checkbox button css*/
@@ -291,9 +296,10 @@
 }
 
 .rmsc .all-select-text {
-  font-size: var(--rmsc-f14);
-  font-weight: 500;
+  font-size: var(--rmsc-f15);
+  font-weight: 400;
   text-align: left;
+  letter-spacing: -1.1px;
 }
 
 /*mip 중복 css*/
@@ -302,14 +308,16 @@
   padding: var(--rmsc-p10);
   color: #fff;
   font-size: var(--rmsc-f15);
-  border-radius: 2px;
+  border-radius: 5px;
   border: 0px;
-  width: 90px;
-  height: 35px;
+  width: 80px;
+  height: 40px;
   font-size: var(--rmsc-f14);
   font-weight: 500;
   float: right;
   margin-right: var(--rmsc-f15);
+  letter-spacing: -1px;
+  font-weight: 500;
 }
 
 .rmsc .blank-style {
