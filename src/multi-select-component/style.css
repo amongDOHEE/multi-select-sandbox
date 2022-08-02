@@ -191,7 +191,7 @@
   font-weight: 600;
   display: flex;
   align-items: baseline;
-  margin-left: var(--rmsc-p5);
+  margin-left: 20px;
 }
 
 .rmsc .all-select-style:hover,
@@ -251,8 +251,11 @@
 }
 
 .rmsc .dott-line {
-  border: dashed 0.5px rgb(224, 224, 224);
-  margin: var(--rmsc-p10);
+  width: 95%;
+  height: 1px;
+  /* dashed border */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAAABCAYAAABHRpXVAAAABHNCSVQICAgIfAhkiAAAAB1JREFUKFNj3Hvi/H8GJOBsYciIzB+VHw2fwZg+AFq4WAKaYTwaAAAAAElFTkSuQmCC");
+  margin: 14px;
 }
 
 .rmsc .all-select-style {
