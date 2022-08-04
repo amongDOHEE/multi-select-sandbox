@@ -67,7 +67,6 @@ function App() {
           onChange={setSelected}
           labelledBy="Select"
           overrideStrings={{
-            selectAll: "엔터테이먼트",
             selectSomeItems: "카테고리",
           }}
         />

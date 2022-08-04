@@ -34,21 +34,6 @@ const SelectPanel = () => {
     putComponents,
   } = useMultiSelect();
 
-  //들어오는 타입의 경우 분리
-  //엔터테이먼트 / 게임 / 제작자 유형  MCN/ 미디어사 / (엔터사/음원) / CMS 미연결 / 참여도 등급 / 구독자수 성장 등급
-  /*
-  const types = [
-    "ent",
-    "game",
-    "owner",
-    "media",
-    "mcn",
-    "enter",
-    "cms",
-    "part",
-    "sub",
-  ];
-  */
   const listRef = useRef<any>();
   const searchInputRef = useRef<any>();
   const [searchText, setSearchText] = useState("");
@@ -65,9 +50,19 @@ const SelectPanel = () => {
     return start;
   }, [disableSearch, hasSelectAll]);
 
-  const selectAllOption = {
-    label: searchText ? t("selectAllFiltered") : t("selectAll"),
-    value: "",
+  //카테고리 분류 타이틀 텍스트
+  //엔터테이먼트 / 게임 / 제작자 유형  MCN/ 미디어사 / (엔터사/음원) / CMS 미연결 / 참여도 등급 / 구독자수 성장 등급
+  const selectCategory = (type: string) => {
+    if (type === "ent") return { label: "엔터테이먼트", value: "" };
+    if (type === "game") return { label: "게임", value: "" };
+    if (type === "owner") return { label: "제작자 유형", value: "" };
+    if (type === "media") return { label: "미디어사", value: "" };
+    if (type === "mcn") return { label: "MCN", value: "" };
+    if (type === "enter") return { label: "엔터사/음원", value: "" };
+    if (type === "cms") return { label: "cms 미연결", value: "" };
+    if (type === "part") return { label: "참여도 등급", value: "" };
+    if (type === "sub") return { label: "구독자 등급", value: "" };
+    return { label: "undefined", value: "" };
   };
 
   const selectAllValues = (checked: boolean) => {
@@ -191,38 +186,30 @@ const SelectPanel = () => {
     <div className="select-panel" role="listbox" ref={listRef}>
       {/*select option section*/}
       <ul className="options">
-        {hasSelectAll && hasSelectableOptions && (
-          <div>
-            <div className="split-section">
-              <SelectItem
-                tabIndex={skipIndex === 1 ? 0 : 1}
-                checked={isAllOptionSelected}
-                option={selectAllOption}
-                onSelectionChanged={selectAllChanged}
-                onClick={() => handleItemClicked(1)}
-                itemRenderer={ItemRenderer}
-                disabled={disabled}
-                isMain={true}
-              />
-              <div className="dott-line"></div>
-            </div>
-            <div className="split-section">
-              <SelectItem
-                tabIndex={skipIndex === 1 ? 0 : 1}
-                checked={isAllOptionSelected}
-                option={selectAllOption}
-                onSelectionChanged={selectAllChanged}
-                onClick={() => handleItemClicked(1)}
-                itemRenderer={ItemRenderer}
-                disabled={disabled}
-                isMain={true}
-              />
-              <div className="dott-line"></div>
-            </div>
-          </div>
-        )}
-
-        {/**일단 이 부분 분할 */}
+        <div>
+          {hasSelectAll &&
+            hasSelectableOptions &&
+            types.map((type, idx) => (
+              <div
+                className="split-section"
+                style={{ width: `${100 / types.length - 5}%` }}
+                key={`title-section-${idx}`}
+              >
+                <SelectItem
+                  tabIndex={skipIndex === 1 ? 0 : 1}
+                  checked={isAllOptionSelected}
+                  option={selectCategory(type)}
+                  onSelectionChanged={selectAllChanged}
+                  onClick={() => handleItemClicked(1)}
+                  itemRenderer={ItemRenderer}
+                  disabled={disabled}
+                  isMain={true}
+                />
+                <div className="dott-line"></div>
+              </div>
+            ))}
+        </div>
+        {/**show list item*/}
         {filteredOptions.length ? (
           <div>
             {types.map((type, idx) => (
