@@ -17,6 +17,7 @@ import SelectList from "./select-list";
 const SelectPanel = () => {
   const {
     t,
+    types,
     onChange,
     options,
     setOptions,
@@ -33,6 +34,21 @@ const SelectPanel = () => {
     putComponents,
   } = useMultiSelect();
 
+  //들어오는 타입의 경우 분리
+  //엔터테이먼트 / 게임 / 제작자 유형  MCN/ 미디어사 / (엔터사/음원) / CMS 미연결 / 참여도 등급 / 구독자수 성장 등급
+  /*
+  const types = [
+    "ent",
+    "game",
+    "owner",
+    "media",
+    "mcn",
+    "enter",
+    "cms",
+    "part",
+    "sub",
+  ];
+  */
   const listRef = useRef<any>();
   const searchInputRef = useRef<any>();
   const [searchText, setSearchText] = useState("");
@@ -209,20 +225,19 @@ const SelectPanel = () => {
         {/**일단 이 부분 분할 */}
         {filteredOptions.length ? (
           <div>
-            <div className="split-section">
-              <SelectList
-                skipIndex={skipIndex}
-                options={filteredOptions.filter((o) => o.type === "ent")}
-                onClick={(_e: any, index: number) => handleItemClicked(index)}
-              />
-            </div>
-            <div className="split-section">
-              <SelectList
-                skipIndex={skipIndex}
-                options={filteredOptions.filter((o) => o.type === "game")}
-                onClick={(_e: any, index: number) => handleItemClicked(index)}
-              />
-            </div>
+            {types.map((type, idx) => (
+              <div
+                className="split-section"
+                style={{ width: `${100 / types.length - 5}%` }}
+                key={`split-section-${idx}`}
+              >
+                <SelectList
+                  skipIndex={skipIndex}
+                  options={filteredOptions.filter((o) => o.type === type)}
+                  onClick={(_e: any, index: number) => handleItemClicked(index)}
+                />
+              </div>
+            ))}
           </div>
         ) : showCratable ? (
           <li

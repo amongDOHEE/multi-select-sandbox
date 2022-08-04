@@ -58,6 +58,7 @@ function App() {
     <div className="App">
       <div>
         <MultiSelect
+          types={["ent", "game"]}
           className="fillter-width"
           pannelWidth={`650px`}
           applyButton={buttonTest}

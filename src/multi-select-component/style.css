@@ -192,7 +192,7 @@
   font-weight: 600;
   display: flex;
   align-items: baseline;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 
 .rmsc .all-select-style:hover,
@@ -257,7 +257,7 @@
   /* dashed border */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAAABCAYAAABHRpXVAAAABHNCSVQICAgIfAhkiAAAAB1JREFUKFNj3Hvi/H8GJOBsYciIzB+VHw2fwZg+AFq4WAKaYTwaAAAAAElFTkSuQmCC");
   margin: 8px;
-  margin-top: -5px;
+  margin-top: 12px;
 }
 
 .rmsc .split-section {

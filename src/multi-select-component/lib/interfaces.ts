@@ -12,6 +12,7 @@ export interface Option {
 
 export interface ISelectProps {
   options: Option[];
+  types: string[];
   value: Option[];
   onChange?: any;
   pannelWidth?: any;
