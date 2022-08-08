@@ -65,15 +65,24 @@ const SelectPanel = () => {
     return { label: "undefined", value: "" };
   };
 
+  //모든 값을 체크하는 함수
+  //값 체크 타이밍 문제 (onclick -> 인덱스 값 바꿈 -> 근데 이제 이제 동시 실행 -> 값 안바뀜)
   const selectAllValues = (checked: boolean) => {
+    console.log("----");
+    const focusType = types[focusIndex];
+    console.log(focusType);
+
     const filteredValues = filteredOptions
+      .filter((o) => o.type === focusType)
       .filter((o) => !o.disabled)
       .map((o) => o.value);
 
+    //근데 focus 안바껴도 잘 바껴야 하지 않나...
     if (checked) {
       const selectedValues = value.map((o) => o.value);
       const finalSelectedValues = [...selectedValues, ...filteredValues];
 
+      //retrun true, false
       return (customFilterOptions ? filteredOptions : options).filter((o) =>
         finalSelectedValues.includes(o.value)
       );
@@ -93,7 +102,11 @@ const SelectPanel = () => {
     searchInputRef?.current?.focus();
   };
 
-  const handleItemClicked = (index: number) => setFocusIndex(index);
+  //아이템 포커싱 하는 함수 - 에러 있으니 추후 수정
+  const handleItemClicked = (index: number) => {
+    console.log("click");
+    setFocusIndex(index);
+  };
 
   // Arrow Key Navigation
   const handleKeyDown = (e: {
@@ -200,7 +213,7 @@ const SelectPanel = () => {
                   checked={isAllOptionSelected}
                   option={selectCategory(type)}
                   onSelectionChanged={selectAllChanged}
-                  onClick={() => handleItemClicked(1)}
+                  onClick={() => handleItemClicked(idx)}
                   itemRenderer={ItemRenderer}
                   disabled={disabled}
                   isMain={true}

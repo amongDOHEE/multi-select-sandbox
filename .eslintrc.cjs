@@ -29,12 +29,7 @@ module.exports = {
       },
     ],
     "no-case-declarations": "off",
-    "no-console": [
-      "error",
-      {
-        allow: ["warn", "error", "debug"],
-      },
-    ],
+    "no-console": 'off',
     "no-useless-escape": "off",
     "prettier/prettier": "error",
     "react/display-name": "off",

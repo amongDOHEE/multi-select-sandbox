@@ -58,16 +58,16 @@ function App() {
     <div className="App">
       <div>
         <MultiSelect
-          types={["ent", "game"]}
-          className="fillter-width"
-          pannelWidth={`650px`}
-          applyButton={buttonTest}
-          options={options}
-          value={selected}
-          onChange={setSelected}
+          types={["ent", "game"]} //목록에 들어간 데이터 셋의 타입
+          className="fillter-width" //필터 (바깥의 넓이)
+          pannelWidth={`600px`} //패널 자체의 넓이
+          applyButton={buttonTest} //버튼을 눌렀을 때 동작하게 할 함수
+          options={options} //들어갈 리스트 아이템 내용
+          value={selected} //선택된 것들
+          onChange={setSelected} //눌렀을 때 할 동작 세팅
           labelledBy="Select"
           overrideStrings={{
-            selectSomeItems: "카테고리",
+            selectSomeItems: "카테고리", //셀렉트 박스 제목
           }}
         />
       </div>
