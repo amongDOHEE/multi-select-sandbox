@@ -104,7 +104,6 @@ const SelectPanel = () => {
 
   //아이템 포커싱 하는 함수 - 에러 있으니 추후 수정
   const handleItemClicked = (index: number) => {
-    console.log("click");
     setFocusIndex(index);
   };
 
@@ -169,6 +168,7 @@ const SelectPanel = () => {
   };
 
   useEffect(() => {
+    console.log(focusIndex);
     listRef?.current?.querySelector(`[tabIndex='${focusIndex}']`)?.focus();
   }, [focusIndex]);
 
